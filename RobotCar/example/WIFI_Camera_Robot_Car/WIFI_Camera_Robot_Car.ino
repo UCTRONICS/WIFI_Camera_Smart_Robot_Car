@@ -206,7 +206,7 @@ void processCommand(String input)
       trackFlag = true;
   } else if (command == "stop")
   {
-    moveStop();
+    moveStop();detected_flag = false; digitalWrite(buzzerPin, LOW);
     stopFlag = true; trackFlag = false;
     digitalWrite(buzzerPin, LOW);
   } else if (command == "MD_SD")
