@@ -192,7 +192,7 @@ void processCommand(String input)
     }
   } else if (command == "MD_stop")
   {
-    moveStop();
+    moveStop();detected_flag = false; digitalWrite(buzzerPin, LOW);
     if (trackFlag) {
       trackFlag = false;
       stopFlag = true;
