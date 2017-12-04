@@ -5,25 +5,29 @@ This library is developed by arducam and is applicable to WIFI camera smart robo
 #How to use RobotCar app?
 
 1. Download and Install App
+<<<<<<< HEAD
 https://github.com/UCTRONICS/WIFI_Camera_Smart_Robot_Car/raw/master/WIFI_APP/RobotCar.apk
+=======
+https://github.com/UCTRONICS/WIFI_Camera_Smart_Robot_Car/raw/master/APP_Controller/RobotCar.apk
+>>>>>>> 0a723ba79d28e3ff8ab8ebaaa99f4cb5a40032c1
 
 2. Connect to the Robot Car
 
 ![Alt text](https://github.com/UCTRONICS/WIFI_Camera_Smart_Robot_Car/blob/master/image/1.png)
 
-3. Open the °ÆRobotCar°Ø app and this is the boot screen
+3. Open the ‚ÄòRobotCar‚Äô app and this is the boot screen
 
 ![Alt text](https://github.com/UCTRONICS/WIFI_Camera_Smart_Robot_Car/blob/master/image/2.png)
 
-4.If the app remind °∞Can°Øt connect car! Please check Network!°± Don°Øt worry, you should check your wifi to ensure you have connected to the °ÆUCTRONICS°Ø hotspot
+4.If the app remind ‚ÄúCan‚Äôt connect car! Please check Network!‚Äù Don‚Äôt worry, you should check your wifi to ensure you have connected to the ‚ÄòUCTRONICS‚Äô hotspot
 
 ![Alt text](https://github.com/UCTRONICS/WIFI_Camera_Smart_Robot_Car/blob/master/image/3.png)
 
-5.As the picture shows the °ÆUCTRONICS°Ø hotspot
+5.As the picture shows the ‚ÄòUCTRONICS‚Äô hotspot
 
 ![Alt text](https://github.com/UCTRONICS/WIFI_Camera_Smart_Robot_Car/blob/master/image/4.png)
 
-6.If connect successful, the app will remind you °ÆConnect successfully!°Ø Now you will see the scene from the car°Øs camera. At the same time, you can operate the joystick on the screen to control the car. The left joystick is to control servo and the right joystick is to control the motor.
+6.If connect successful, the app will remind you ‚ÄòConnect successfully!‚Äô Now you will see the scene from the car‚Äôs camera. At the same time, you can operate the joystick on the screen to control the car. The left joystick is to control servo and the right joystick is to control the motor.
 
 ![Alt text](https://github.com/UCTRONICS/WIFI_Camera_Smart_Robot_Car/blob/master/image/5.png)
 
@@ -71,5 +75,10 @@ When using the function of taking picture or recording video, you need to get th
 ![Alt text](https://github.com/UCTRONICS/WIFI_Camera_Smart_Robot_Car/blob/master/image/16.png)
 ![Alt text](https://github.com/UCTRONICS/WIFI_Camera_Smart_Robot_Car/blob/master/image/17.png)
 
+<<<<<<< HEAD
  The video still does not display even if °ÆConnect successfully°Ø is appeared, and the problem can°Øt be settled down through refresh. That may be caused by a low Android version. At this moment, you can click °ÆSetting°Ø and choose °ÆDISPLAY_MODE°Ø to change the mode to 2.
  ![Alt text](https://github.com/UCTRONICS/WIFI_Camera_Smart_Robot_Car/blob/master/image/18.png)
+=======
+ The video still does not display even if ‚ÄòConnect successfully‚Äô is appeared, and the problem can‚Äôt be settled down through refresh. That may be caused by a low Android version. At this moment, you can click ‚ÄòSetting‚Äô and choose ‚ÄòDISPLAY_MODE‚Äô to change the mode to 2.
+ ![Alt text](https://github.com/UCTRONICS/Smart-Robot-Car-Arduino/blob/master/image/18.png)
+>>>>>>> 0a723ba79d28e3ff8ab8ebaaa99f4cb5a40032c1

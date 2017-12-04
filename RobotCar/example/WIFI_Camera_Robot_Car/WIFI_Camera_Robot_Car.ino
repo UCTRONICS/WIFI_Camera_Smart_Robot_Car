@@ -1,25 +1,34 @@
 //WIFI_Camera_Robot_Car demo (C)2017 Lee
-
+//This demo needs to be used in conjunction with the mobile APP.
+//You can take a picture or record a video or make a speaker work
+//You can change the value of the SZ_SPEEDTHR to change the default motor speed
+//You can change the center Angle of two steering engines by optimize the below variables
+/*******************************************************
+byte servoXCenterPoint = 88;
+byte servoYCenterPoint = 70;
+**********************************************************/
+//You can change the accuracy of the servo by optimize the servoStep variables
+//When powered on, the wifi module will start and you will see the blue led flash.
+//At the same time the servo will reset to the center Angle you have setted.
+//When the blue led stop flash and keep on light,which means the wifi  start successfully
+//and you can control your car using our RobotCar APP.
 
 #include <AFMotor.h>
 #include <Servo.h>
 #include <Wire.h>
 
-#define MOTORS_CALIBRATION_OFFSET 0
+
 #define TRIG_PIN A2
 #define ECHO_PIN A3
-#define MAX_DISTANCE_POSSIBLE 1000
-#define DEFLE_SPEED 50
 
 //Define the tracking pin
 #define leftSensor    A0
 #define middleSensor  A1
 #define rightSensor   13
+
 int buzzerPin = 2; //Beep pin
 int MAX_SPEED_LEFT ;
 int MAX_SPEED_RIGHT;
-int TURN_MAX_SPEED_LEFT = 250;
-int TURN_MAX_SPEED_RIGHT = 250;
 int SZ_SPEEDPRO = 0;
 int SZ_SPEEDTHR = 150;
 
@@ -28,24 +37,26 @@ byte commandAvailable = false;
 String strReceived = "";
 
 //The center Angle of two steering engines.
-
 byte servoXCenterPoint = 88;
 byte servoYCenterPoint = 70;
 
 //The maximum Angle of two steering gear
 byte servoXmax = 170;
 byte servoYmax = 130;
-
 //The minimum Angle of two steering gear
 byte servoXmini = 10;
 byte servoYmini = 10;
+
+//The accuracy of servo
+byte servoStep = 4;
+
 //The current Angle of the two steering engines is used for retransmission
 byte servoXPoint = 0;
 byte servoYPoint = 0;
 
 byte leftspeed = 0;
 byte rightspeed = 0;
-byte servoStep = 4;
+
 String motorSet = "";
 int speedSet = 0;
 int detecteVal = 0;
@@ -181,7 +192,7 @@ void processCommand(String input)
     }
   } else if (command == "MD_stop")
   {
-    moveStop();
+    moveStop();detected_flag = false; digitalWrite(buzzerPin, LOW);
     if (trackFlag) {
       trackFlag = false;
       stopFlag = true;
@@ -195,7 +206,7 @@ void processCommand(String input)
       trackFlag = true;
   } else if (command == "stop")
   {
-    moveStop();
+    moveStop();detected_flag = false; digitalWrite(buzzerPin, LOW);
     stopFlag = true; trackFlag = false;
     digitalWrite(buzzerPin, LOW);
   } else if (command == "MD_SD")
