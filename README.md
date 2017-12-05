@@ -15,15 +15,15 @@ https://github.com/UCTRONICS/WIFI_Camera_Smart_Robot_Car/raw/master/WIFI_APP/Rob
 
 ![Alt text](https://github.com/UCTRONICS/WIFI_Camera_Smart_Robot_Car/blob/master/image/2.png)
 
-4.If the app remind â€œCanâ€™t connect car! Please check Network!â€ Donâ€™t worry, you should check your wifi to ensure you have connected to the â€˜UCTRONICSâ€™ hotspot
+4.If the app remind Can't connect car! Please check Network! Don't worry, you should check your wifi to ensure you have connected to the UCTRONICS hotspot
 
 ![Alt text](https://github.com/UCTRONICS/WIFI_Camera_Smart_Robot_Car/blob/master/image/3.png)
 
-5.As the picture shows the â€˜UCTRONICSâ€™ hotspot
+5.As the picture shows the UCTRONICS hotspot
 
 ![Alt text](https://github.com/UCTRONICS/WIFI_Camera_Smart_Robot_Car/blob/master/image/4.png)
 
-6.If connect successful, the app will remind you â€˜Connect successfully!â€™ Now you will see the scene from the carâ€™s camera. At the same time, you can operate the joystick on the screen to control the car. The left joystick is to control servo and the right joystick is to control the motor.
+6.If connect successful, the app will remind you Connect successfully! Now you will see the scene from the  camera. At the same time, you can operate the joystick on the screen to control the car. The left joystick is to control servo and the right joystick is to control the motor.
 
 ![Alt text](https://github.com/UCTRONICS/WIFI_Camera_Smart_Robot_Car/blob/master/image/5.png)
 
@@ -71,10 +71,5 @@ When using the function of taking picture or recording video, you need to get th
 ![Alt text](https://github.com/UCTRONICS/WIFI_Camera_Smart_Robot_Car/blob/master/image/16.png)
 ![Alt text](https://github.com/UCTRONICS/WIFI_Camera_Smart_Robot_Car/blob/master/image/17.png)
 
-<<<<<<< HEAD
- The video still does not display even if ¡®Connect successfully¡¯ is appeared, and the problem can¡¯t be settled down through refresh. That may be caused by a low Android version. At this moment, you can click ¡®Setting¡¯ and choose ¡®DISPLAY_MODE¡¯ to change the mode to 2.
- ![Alt text](https://github.com/UCTRONICS/WIFI_Camera_Smart_Robot_Car/blob/master/image/18.png)
-=======
- The video still does not display even if â€˜Connect successfullyâ€™ is appeared, and the problem canâ€™t be settled down through refresh. That may be caused by a low Android version. At this moment, you can click â€˜Settingâ€™ and choose â€˜DISPLAY_MODEâ€™ to change the mode to 2.
- ![Alt text](https://github.com/UCTRONICS/Smart-Robot-Car-Arduino/blob/master/image/18.png)
->>>>>>> 0a723ba79d28e3ff8ab8ebaaa99f4cb5a40032c1
+ The video still does not display even if Connect successfully is appeared, and the problem can't be settled down through refresh. That may be caused by a low Android version. At this moment, you can click Setting and choose DISPLAY_MODE to change the mode to 2.
+![Alt text](https://github.com/UCTRONICS/WIFI_Camera_Smart_Robot_Car/blob/master/image/18.png)
