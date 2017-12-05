@@ -71,10 +71,7 @@ When using the function of taking picture or recording video, you need to get th
 ![Alt text](https://github.com/UCTRONICS/WIFI_Camera_Smart_Robot_Car/blob/master/image/16.png)
 ![Alt text](https://github.com/UCTRONICS/WIFI_Camera_Smart_Robot_Car/blob/master/image/17.png)
 
-<<<<<<< HEAD
  The video still does not display even if ¡®Connect successfully¡¯ is appeared, and the problem can¡¯t be settled down through refresh. That may be caused by a low Android version. At this moment, you can click ¡®Setting¡¯ and choose ¡®DISPLAY_MODE¡¯ to change the mode to 2.
- ![Alt text](https://github.com/UCTRONICS/WIFI_Camera_Smart_Robot_Car/blob/master/image/18.png)
-=======
+![Alt text](https://github.com/UCTRONICS/WIFI_Camera_Smart_Robot_Car/blob/master/image/18.png)
  The video still does not display even if â€˜Connect successfullyâ€™ is appeared, and the problem canâ€™t be settled down through refresh. That may be caused by a low Android version. At this moment, you can click â€˜Settingâ€™ and choose â€˜DISPLAY_MODEâ€™ to change the mode to 2.
  ![Alt text](https://github.com/UCTRONICS/Smart-Robot-Car-Arduino/blob/master/image/18.png)
->>>>>>> 0a723ba79d28e3ff8ab8ebaaa99f4cb5a40032c1
