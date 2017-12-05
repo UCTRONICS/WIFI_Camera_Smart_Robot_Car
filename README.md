@@ -13,7 +13,7 @@ https://github.com/UCTRONICS/WIFI_Camera_Smart_Robot_Car/raw/master/WIFI_APP/Rob
 
 3. Open the â€˜RobotCarâ€™ app and this is the boot screen
 
-![Alt text](https://github.com/UCTRONICS/WIFI_Camera_Smart_Robot_Car/blob/master/image/2.png)
+![Alt text](https://github.com/UCTRONICS/WIFI_Camera_Smart_Robot_Car/blob/master/image/3.png)
 
 4.If the app remind Can't connect car! Please check Network! Don't worry, you should check your wifi to ensure you have connected to the UCTRONICS hotspot
 
