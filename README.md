@@ -13,7 +13,7 @@ https://github.com/UCTRONICS/WIFI_Camera_Smart_Robot_Car/raw/master/WIFI_APP/Rob
 
 3. Open the â€˜RobotCarâ€™ app and this is the boot screen
 
-![Alt text](https://github.com/UCTRONICS/WIFI_Camera_Smart_Robot_Car/blob/master/image/3.png)
+![Alt text](https://github.com/UCTRONICS/WIFI_Camera_Smart_Robot_Car/blob/master/image/2.png)
 
 4.If the app remind Can't connect car! Please check Network! Don't worry, you should check your wifi to ensure you have connected to the UCTRONICS hotspot
 
@@ -25,7 +25,7 @@ https://github.com/UCTRONICS/WIFI_Camera_Smart_Robot_Car/raw/master/WIFI_APP/Rob
 
 6.If connect successful, the app will remind you Connect successfully! Now you will see the scene from the  camera. At the same time, you can operate the joystick on the screen to control the car. The left joystick is to control servo and the right joystick is to control the motor.
 
-![Alt text](https://github.com/UCTRONICS/WIFI_Camera_Smart_Robot_Car/blob/master/image/5.png)
+![Alt text](https://github.com/UCTRONICS/WIFI_Camera_Smart_Robot_Car/blob/master/image/6.png)
 
 7.You can take a picture or record a video or make a speaker work
 
