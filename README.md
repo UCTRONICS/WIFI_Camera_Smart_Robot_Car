@@ -73,5 +73,3 @@ When using the function of taking picture or recording video, you need to get th
 
  The video still does not display even if Connect successfully is appeared, and the problem can't be settled down through refresh. That may be caused by a low Android version. At this moment, you can click Setting and choose DISPLAY_MODE to change the mode to 2.
 ![Alt text](https://github.com/UCTRONICS/WIFI_Camera_Smart_Robot_Car/blob/master/image/18.png)
- The video still does not display even if Connect successfully is appeared, and the problem can't be settled down through refresh. That may be caused by a low Android version. At this moment, you can click Setting and choose â€˜DISPLAY_MODEâ€™ to change the mode to 2.
- ![Alt text](https://github.com/UCTRONICS/Smart-Robot-Car-Arduino/blob/master/image/18.png)
