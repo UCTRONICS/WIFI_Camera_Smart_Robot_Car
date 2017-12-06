@@ -17,21 +17,18 @@
 #include <Servo.h>
 #include <Wire.h>
 
-
 #define TRIG_PIN A2
 #define ECHO_PIN A3
 
-//Define the turn distance 
+//Define the turn distance
 #define TURN_DIST 30
 
 //Define the tracking pin
 #define leftSensor    A0
 #define middleSensor  A1
 #define rightSensor   13
-
 //Define the frequence of the beep
 #define beepFrequence 50
-
 
 //Define the turn time of the car
 #define  turnTime    300
@@ -240,16 +237,16 @@ void processCommand(String input)
     }
   } else if (command == "track")
   {
-      trackFlag = true;
-      trackStopFlag =false;
-      moveTrack();    
-  } 
+    trackFlag = true;
+    trackStopFlag = false;
+    moveTrack();
+  }
   else if (command == "avoidance")
   {
-      avoidFlag = true;
-      avoidStopFlag =false;
-      avoidance(); 
-  } 
+    avoidFlag = true;
+    avoidStopFlag = false;
+    avoidance();
+  }
   else if (command == "stop")
   {
     moveStop(); detected_flag = false; digitalWrite(buzzerPin, LOW);
@@ -403,6 +400,7 @@ void servo_Horizontal(int corner)
   byte cornerX = servoX.read();
   if (cornerX > corner) {
     for (i = cornerX; i > corner; i = i - servoStep) {
+      \
       servoX.write(i);
       servoXPoint = i;
       delay(50);
@@ -515,6 +513,41 @@ void turnLeft(void)
   leftMotor2.setSpeed(MAX_SPEED_LEFT_AL);
   rightMotor2.setSpeed(MAX_SPEED_RIGHT_AL);
 }
+
+
+void TrackturnLeft(void)
+{
+  static int MAX_SPEED_LEFT_A, MAX_SPEED_RIGHT_A;
+  MAX_SPEED_RIGHT_A = MAX_SPEED_RIGHT > (255 - (int)(MAX_SPEED_RIGHT * 0.5)) ? 255 : MAX_SPEED_RIGHT + (int)(MAX_SPEED_RIGHT * 0.5);
+  MAX_SPEED_LEFT_A  = (MAX_SPEED_LEFT - (int)(MAX_SPEED_LEFT * 1)) < 0 ? 0 : MAX_SPEED_LEFT - (int)(MAX_SPEED_LEFT * 1);
+
+  motorSet = "LEFT";
+  leftMotor1.run(FORWARD);
+  rightMotor1.run(FORWARD);
+  leftMotor2.run(FORWARD2);
+  rightMotor2.run(FORWARD2);
+  leftMotor1.setSpeed(MAX_SPEED_LEFT_A);
+  rightMotor1.setSpeed(MAX_SPEED_RIGHT_A);
+  leftMotor2.setSpeed(MAX_SPEED_LEFT_A);
+  rightMotor2.setSpeed(MAX_SPEED_RIGHT_A);
+}
+
+void TrackturnRight(void)
+{
+  static int MAX_SPEED_LEFT_A, MAX_SPEED_RIGHT_A;
+  MAX_SPEED_LEFT_A = MAX_SPEED_LEFT > (255 - (int)(MAX_SPEED_LEFT * 0.5)) ? 255 : MAX_SPEED_LEFT + (int)(MAX_SPEED_LEFT * 0.5);
+  MAX_SPEED_RIGHT_A  = (MAX_SPEED_RIGHT - (int)(MAX_SPEED_RIGHT * 1)) < 0 ? 0 : MAX_SPEED_RIGHT - (int)(MAX_SPEED_RIGHT * 1);
+
+  motorSet = "RIGHT";
+  leftMotor1.run(FORWARD);
+  rightMotor1.run(FORWARD);
+  leftMotor2.run(FORWARD2);
+  rightMotor2.run(FORWARD2);
+  leftMotor1.setSpeed(MAX_SPEED_LEFT_A);
+  rightMotor1.setSpeed(MAX_SPEED_RIGHT_A);
+  leftMotor2.setSpeed(MAX_SPEED_LEFT_A);
+  rightMotor2.setSpeed(MAX_SPEED_RIGHT_A);
+}
 void moveStop(void)
 {
   leftMotor1.run(RELEASE); rightMotor1.run(RELEASE);
@@ -526,7 +559,6 @@ void moveTrack(void)
   strReceived = "";
   commandAvailable = false;
   while (1) {
-    
     if ((Serial.available() > 0))
     {
       serialIn = Serial.read();
@@ -545,7 +577,7 @@ void moveTrack(void)
       commandAvailable = false;
     }
 
-     if (trackStopFlag) {
+    if (trackStopFlag) {
       trackStopFlag = false;
       moveStop();
       strReceived = "";
@@ -558,20 +590,20 @@ void moveTrack(void)
     if ((num2 == 0) && (num1 == 0) && (num3 == 0)) {
       moveStop(); continue;
     } else if ( (num1 == 0) && num3 == 1) { //go to right
-      turnLeft();
+      TrackturnLeft();
       while (1) {
         num2 = digitalRead(middleSensor);
         if (num2) {
-          turnLeft(); continue;
+          TrackturnLeft(); continue;
         } else
           break;
       }
     } else if ((num3 == 0) && (num1 == 1)) { // go to left
-      turnRight();
+      TrackturnRight();
       while (1) {
         num2 = digitalRead(middleSensor);
         if (num2) {
-          turnRight(); continue;
+          TrackturnRight(); continue;
         } else
           break;
       }
@@ -579,7 +611,7 @@ void moveTrack(void)
     {
       moveForward();
     }
-    
+
   }
 }
 
