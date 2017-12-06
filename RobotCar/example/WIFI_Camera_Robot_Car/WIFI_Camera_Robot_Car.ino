@@ -4,8 +4,8 @@
 //You can change the value of the SZ_SPEEDTHR to change the default motor speed
 //You can change the center Angle of two steering engines by optimize the below variables
 /*******************************************************
-byte servoXCenterPoint = 88;
-byte servoYCenterPoint = 70;
+  byte servoXCenterPoint = 88;
+  byte servoYCenterPoint = 70;
 **********************************************************/
 //You can change the accuracy of the servo by optimize the servoStep variables
 //When powered on, the wifi module will start and you will see the blue led flash.
@@ -21,10 +21,20 @@ byte servoYCenterPoint = 70;
 #define TRIG_PIN A2
 #define ECHO_PIN A3
 
+//Define the turn distance 
+#define TURN_DIST 30
+
 //Define the tracking pin
 #define leftSensor    A0
 #define middleSensor  A1
 #define rightSensor   13
+
+//Define the frequence of the beep
+#define beepFrequence 50
+
+
+//Define the turn time of the car
+#define  turnTime    300
 
 int buzzerPin = 2; //Beep pin
 int MAX_SPEED_LEFT ;
@@ -61,10 +71,12 @@ String motorSet = "";
 int speedSet = 0;
 int detecteVal = 0;
 bool detected_flag = false;
-bool stopFlag = false;
 bool timeFlag = true;
 bool beepFlag = false;
 bool trackFlag = false;
+bool avoidFlag = false;
+bool trackStopFlag = false;
+bool avoidStopFlag = false;
 long currentTime = 0;
 
 AF_DCMotor leftMotor1(3, MOTOR34_64KHZ);
@@ -90,6 +102,8 @@ void setup()
   servo_center();
   MAX_SPEED_LEFT = SZ_SPEEDTHR;
   MAX_SPEED_RIGHT = SZ_SPEEDTHR;
+  BEEP_OPEN ();
+
 }
 
 void loop()
@@ -112,13 +126,13 @@ void getSerialLine()
         currentTime = micros();
         timeFlag = false;
       }
-      if (  micros() - currentTime >= 300000) {
+      if (  micros() - currentTime >= 100000) {
         timeFlag = true;
         currentTime = micros();
         if (detected_flag) {
           temp = readPing();
-          if ( temp <= 30 && temp > 0 ) {
-            moveStop(); digitalWrite(buzzerPin, HIGH);
+          if ( temp <= TURN_DIST && temp > 0 ) {
+            moveStop(); BEEP_INT();
           } else {
             if (!beepFlag)
               digitalWrite(buzzerPin, LOW);
@@ -151,63 +165,95 @@ void processCommand(String input)
   {
     detected_flag = true;
     int temp = readPing();
-    if ( temp <= 30 && temp > 0 ) {
-      moveStop();
-      digitalWrite(buzzerPin, HIGH);
+    if ( temp <= TURN_DIST && temp > 0 ) {
+      moveStop(); BEEP_INT();
     } else {
       digitalWrite(buzzerPin, LOW);
       moveForward();
     }
     if (trackFlag) {
-      stopFlag = true;
+      trackStopFlag = true;
     }
+    if (avoidFlag) {
+      avoidStopFlag = true;
+    }
+
   } else if (command == "MD_up_left" || command == "MD_up_right" || command == "MD_down_left" || command == "MD_down_right")
   {
     movePianZhuan (command.substring(command.indexOf("_") + 1));
     detected_flag = false; digitalWrite(buzzerPin, LOW);
     if (trackFlag) {
       trackFlag = false;
-      stopFlag = true;
+      trackStopFlag = true;
     }
+    if (avoidFlag) {
+      avoidFlag = false;
+      avoidStopFlag = true;
+    }
+
   } else if (command == "MD_down")
   {
     moveBackward(); detected_flag = false; digitalWrite(buzzerPin, LOW);
     if (trackFlag) {
       trackFlag = false;
-      stopFlag = true;
+      trackStopFlag = true;
     }
+    if (avoidFlag) {
+      avoidFlag = false;
+      avoidStopFlag = true;
+    }
+
   } else if (command == "MD_left")
   {
     turnLeft(); detected_flag = false; digitalWrite(buzzerPin, LOW);
     if (trackFlag) {
       trackFlag = false;
-      stopFlag = true;
+      trackStopFlag = true;
     }
+    if (avoidFlag) {
+      avoidFlag = false;
+      avoidStopFlag = true;
+    }
+
   } else if (command == "MD_right")
   {
     turnRight(); detected_flag = false; digitalWrite(buzzerPin, LOW);
     if (trackFlag) {
       trackFlag = false;
-      stopFlag = true;
+      trackStopFlag = true;
     }
+    if (avoidFlag) {
+      avoidFlag = false;
+      avoidStopFlag = true;
+    }
+
   } else if (command == "MD_stop")
   {
-    moveStop();detected_flag = false; digitalWrite(buzzerPin, LOW);
+    moveStop(); detected_flag = false; digitalWrite(buzzerPin, LOW);
     if (trackFlag) {
       trackFlag = false;
-      stopFlag = true;
+      trackStopFlag = true;
+    }
+    if (avoidFlag) {
+      avoidFlag = false;
+      avoidStopFlag = true;
     }
   } else if (command == "track")
   {
-    if (!trackFlag) {
       trackFlag = true;
-      moveTrack();
-    } else
-      trackFlag = true;
-  } else if (command == "stop")
+      trackStopFlag =false;
+      moveTrack();    
+  } 
+  else if (command == "avoidance")
   {
-    moveStop();detected_flag = false; digitalWrite(buzzerPin, LOW);
-    stopFlag = true; trackFlag = false;
+      avoidFlag = true;
+      avoidStopFlag =false;
+      avoidance(); 
+  } 
+  else if (command == "stop")
+  {
+    moveStop(); detected_flag = false; digitalWrite(buzzerPin, LOW);
+    trackStopFlag = true; avoidStopFlag = true; trackFlag = false; avoidFlag = false;
     digitalWrite(buzzerPin, LOW);
   } else if (command == "MD_SD")
   {
@@ -480,6 +526,7 @@ void moveTrack(void)
   strReceived = "";
   commandAvailable = false;
   while (1) {
+    
     if ((Serial.available() > 0))
     {
       serialIn = Serial.read();
@@ -497,8 +544,9 @@ void moveTrack(void)
       strReceived = "";
       commandAvailable = false;
     }
-    if (stopFlag) {
-      stopFlag = false;
+
+     if (trackStopFlag) {
+      trackStopFlag = false;
       moveStop();
       strReceived = "";
       commandAvailable = false;
@@ -531,8 +579,64 @@ void moveTrack(void)
     {
       moveForward();
     }
+    
   }
 }
+
+
+void avoidance(void)
+{
+  strReceived = "";
+  commandAvailable = false;
+  while (1) {
+    if ((Serial.available() > 0))
+    {
+      serialIn = Serial.read();
+      if (serialIn != '\r') {
+        if (serialIn != '\n') {
+          char a = char(serialIn);
+          strReceived += a;
+        }
+      }
+    }
+    if (serialIn == '\r') {
+      commandAvailable = true;
+      serialIn = 0;
+      processCommand(strReceived);
+      strReceived = "";
+      commandAvailable = false;
+    }
+    if (avoidStopFlag) {
+      avoidStopFlag = false;
+      moveStop();
+      strReceived = "";
+      commandAvailable = false;
+      break;
+    }
+    int  S = readPing();
+    if (S <= TURN_DIST && S > 0 ) {
+      BEEP_INT();
+      turn();
+    } else
+      moveForward();
+  }
+}
+
+void turn() {
+  moveBackward();
+  delay(turnTime);
+  moveStop();
+  int x = random(1);
+  if (x = 0) {
+    turnRight();
+  }
+  else {
+    turnLeft();
+  }
+  delay(turnTime);
+  moveStop();
+}
+
 void SendMessage(String data) {
   Serial.println(data);
 }
@@ -566,3 +670,17 @@ long microsecondsToCentimeters(long microseconds)
   return microseconds / 29 / 2;
 }
 
+
+void BEEP_INT (void) {
+  digitalWrite(buzzerPin, HIGH);
+  delay(beepFrequence);
+  digitalWrite(buzzerPin, LOW);
+  delay(beepFrequence);
+}
+
+
+void BEEP_OPEN (void) {
+  digitalWrite(buzzerPin, HIGH);
+  delay(beepFrequence * 5);
+  digitalWrite(buzzerPin, LOW);
+}
