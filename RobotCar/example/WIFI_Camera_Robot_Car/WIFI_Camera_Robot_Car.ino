@@ -13,7 +13,7 @@
 //When the blue led stop flash and keep on light,which means the wifi  start successfully
 //and you can control your car using our RobotCar APP.
 
-#include <AFMotor.h>
+#include <UCMotor.h>
 #include <Servo.h>
 #include <Wire.h>
 
@@ -76,10 +76,10 @@ bool trackStopFlag = false;
 bool avoidStopFlag = false;
 long currentTime = 0;
 
-AF_DCMotor leftMotor1(3, MOTOR34_64KHZ);
-AF_DCMotor rightMotor1(4, MOTOR34_64KHZ);
-AF_DCMotor leftMotor2(1, MOTOR34_64KHZ);
-AF_DCMotor rightMotor2(2, MOTOR34_64KHZ);
+UC_DCMotor leftMotor1(3, MOTOR34_64KHZ);
+UC_DCMotor rightMotor1(4, MOTOR34_64KHZ);
+UC_DCMotor leftMotor2(1, MOTOR34_64KHZ);
+UC_DCMotor rightMotor2(2, MOTOR34_64KHZ);
 
 Servo servoX;
 Servo servoY;
