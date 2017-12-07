@@ -12,6 +12,7 @@
 //You can change the TrackFactorUp and TrackFactorDown to adjust the value of tracking
 //If the car deviate too far from the trail line,you can increase the value of TrackFactorUp and reduce the value of TrackFactorDown
 //If the car is shaking very badly, even turn around,you'd better reduce the  value of the TrackFactorUp and increase the value of rackFactorDown
+//the default value is 0.5 and 0.7
 /*********************************************************
 #define  TrackFactorUp     0.5
 #define  TrackFactorDown   0.7
