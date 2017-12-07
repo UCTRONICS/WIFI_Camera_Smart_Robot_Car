@@ -12,7 +12,9 @@
       take pictures
       
       record video
-           
+  
+  # Our App has been tested on most mobile phone with Android OS
+  
        
 # Q1: The screen display "connecting ...",but can't control my Robot car and can't the scene from the car’s camera.
 
