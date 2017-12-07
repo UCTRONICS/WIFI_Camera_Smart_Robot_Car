@@ -25,6 +25,7 @@ A3:
 
 # Q4:  When I click Camera Reset on App,but the robot car's camera can't reset to the center point.
 
+A4:
 > 1. When assembling the servo, pay attention to the middle position.
 > 2. In WIFI_Camera_Robot_Car.ino, You can change the center Angle of two steering engines by optimize the below variables
 
@@ -37,6 +38,7 @@ A3:
                             **********************************************************/
  # Q5: In avoidance mode, when the car find the obstacle in the front. it will move back and turn a whole round.
  
+ A5:
  > 1. You can try reduce the value of the turnTime by changing #define  turnTime    300
                             
 
