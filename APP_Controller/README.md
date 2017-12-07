@@ -2,7 +2,18 @@
 # Trouble shooting 
 # Let us know if you have any problems and we will try our best to help you.
 
-
+# WIFI Camera Smart Robot Cat supports below functions：
+      Tracking line (black line)
+      
+      avoid obstacle
+      
+      first person view
+      
+      take pictures
+      
+      record video
+           
+       
 # Q1: The screen display "connecting ...",but can't control my Robot car and can't the scene from the car’s camera.
 
 A1: 
