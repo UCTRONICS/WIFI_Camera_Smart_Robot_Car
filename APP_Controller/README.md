@@ -19,9 +19,17 @@ A2:
 # Q3: I can control my robot car move backword,turn left or right, but can't move forward.What's more,the beep will warning.
 
 A3:
-> 1.Check your ultrasonics module to make sure it can work fine,you download the test code from https://github.com/UCTRONICS/Smart-Robot-Car-Arduino/blob/master/UCTRONICS_Smart_Robot_Car/example/ultrasonicTest/ultrasonicTest.ino
+> 1. Check your ultrasonics module to make sure it can work fine,you download the test code from https://github.com/UCTRONICS/Smart-Robot-Car-Arduino/blob/master/UCTRONICS_Smart_Robot_Car/example/ultrasonicTest/ultrasonicTest.ino
 
 > 2. Make sure your battery have enough power, if the battery power is very low, which will influence the ultrasonic woek.
 
+# Q4:  When I click Camera Reset on App,but the robot car's camera can't reset to the center point.
 
+> 1. When assembling the servo, pay attention to the middle position.
+> 2. //You can change the center Angle of two steering engines by optimize the below variables
+                           /*******************************************************
+                                         byte servoXCenterPoint = 88;
+                                          byte servoYCenterPoint = 70;
+                            **********************************************************/
+                            
 
