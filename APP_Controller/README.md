@@ -46,7 +46,7 @@ A4:
  A6:
  > You can change the TrackFactorUp and TrackFactorDown to adjust the value of tracking
  > If the car deviate too far from the trail line,you can increase the value of TrackFactorUp and reduce the value of  
- > TrackFactorDown
+ > TrackFactorDown.
  > If the car is shaking very badly, even turn around,you'd better reduce the  value of the TrackFactorUp and increase the value       >  of rackFactorDown
  
                                       #define  TrackFactorUp     0.5
