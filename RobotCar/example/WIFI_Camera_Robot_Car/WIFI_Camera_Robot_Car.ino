@@ -41,7 +41,7 @@
 #define beepFrequence 50
 
 //Define the turn time of the car
-#define  turnTime    300
+#define  turnTime    500
 //You can change the TrackFactorUp and TrackFactorDown to adjust the value of tracking
 //If the car deviate too far from the trail line,you can increase the value of TrackFactorUp and reduce the value of TrackFactorDown
 //If the car is shaking very badly, even turn around,you'd better reduce the  value of the TrackFactorUp and increase the value of rackFactorDown
