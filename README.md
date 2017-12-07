@@ -18,7 +18,7 @@ https://github.com/UCTRONICS/WIFI_Camera_Smart_Robot_Car/raw/master/WIFI_APP/Rob
 
 ![Alt text](https://github.com/UCTRONICS/WIFI_Camera_Smart_Robot_Car/blob/master/image/1.png)
 
-> 3. Open the â€˜RobotCarâ€™ app and this is the boot screen
+> 3. Open the RobotCar app and this is the boot screen
 
 ![Alt text](https://github.com/UCTRONICS/WIFI_Camera_Smart_Robot_Car/blob/master/image/2.png)
 
