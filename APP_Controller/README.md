@@ -27,9 +27,13 @@ A3:
 
 > 1. When assembling the servo, pay attention to the middle position.
 > 2. //You can change the center Angle of two steering engines by optimize the below variables
+
                            /*******************************************************
+                           
                                          byte servoXCenterPoint = 88;
+                                         
                                           byte servoYCenterPoint = 70;
+                                          
                             **********************************************************/
                             
 
