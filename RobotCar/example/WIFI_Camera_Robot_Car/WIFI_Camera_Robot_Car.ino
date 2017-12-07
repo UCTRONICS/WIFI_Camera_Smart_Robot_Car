@@ -32,6 +32,11 @@
 
 //Define the turn time of the car
 #define  turnTime    300
+//You can change the TrackFactorUp and TrackFactorDown to adjust the value of tracking
+//If the car deviate too far from the trail line,you can increase the value of TrackFactorUp and reduce the value of TrackFactorDown
+//If the car is shaking very badly, even turn around,you'd better reduce the  value of the TrackFactorUp and increase the value of rackFactorDown
+#define  TrackFactorUp     0.5
+#define  TrackFactorDown   0.7
 
 int buzzerPin = 2; //Beep pin
 int MAX_SPEED_LEFT ;
@@ -519,12 +524,12 @@ void TrackturnLeft(void)
 {
   static int MAX_SPEED_LEFT_A, MAX_SPEED_RIGHT_A;
   MAX_SPEED_RIGHT_A = MAX_SPEED_RIGHT > (255 - (int)(MAX_SPEED_RIGHT * 0.5)) ? 255 : MAX_SPEED_RIGHT + (int)(MAX_SPEED_RIGHT * 0.5);
-  MAX_SPEED_LEFT_A  = (MAX_SPEED_LEFT - (int)(MAX_SPEED_LEFT * 1)) < 0 ? 0 : MAX_SPEED_LEFT - (int)(MAX_SPEED_LEFT * 1);
+  MAX_SPEED_LEFT_A  = (MAX_SPEED_LEFT - (int)(MAX_SPEED_LEFT * 0.7)) < 0 ? 0 : MAX_SPEED_LEFT - (int)(MAX_SPEED_LEFT * 0.7);
 
   motorSet = "LEFT";
-  leftMotor1.run(FORWARD);
+  leftMotor1.run(BACKWARD);
   rightMotor1.run(FORWARD);
-  leftMotor2.run(FORWARD2);
+  leftMotor2.run(BACKWARD2);
   rightMotor2.run(FORWARD2);
   leftMotor1.setSpeed(MAX_SPEED_LEFT_A);
   rightMotor1.setSpeed(MAX_SPEED_RIGHT_A);
@@ -535,14 +540,14 @@ void TrackturnLeft(void)
 void TrackturnRight(void)
 {
   static int MAX_SPEED_LEFT_A, MAX_SPEED_RIGHT_A;
-  MAX_SPEED_LEFT_A = MAX_SPEED_LEFT > (255 - (int)(MAX_SPEED_LEFT * 0.5)) ? 255 : MAX_SPEED_LEFT + (int)(MAX_SPEED_LEFT * 0.5);
-  MAX_SPEED_RIGHT_A  = (MAX_SPEED_RIGHT - (int)(MAX_SPEED_RIGHT * 1)) < 0 ? 0 : MAX_SPEED_RIGHT - (int)(MAX_SPEED_RIGHT * 1);
+  MAX_SPEED_LEFT_A = MAX_SPEED_LEFT > (255 - (int)(MAX_SPEED_LEFT * TrackFactorUp)) ? 255 : MAX_SPEED_LEFT + (int)(MAX_SPEED_LEFT * TrackFactorUp);
+  MAX_SPEED_RIGHT_A  = (MAX_SPEED_RIGHT - (int)(MAX_SPEED_RIGHT * TrackFactorDown)) < 0 ? 0 : MAX_SPEED_RIGHT - (int)(MAX_SPEED_RIGHT * TrackFactorDown);
 
   motorSet = "RIGHT";
   leftMotor1.run(FORWARD);
-  rightMotor1.run(FORWARD);
+  rightMotor1.run(BACKWARD);
   leftMotor2.run(FORWARD2);
-  rightMotor2.run(FORWARD2);
+  rightMotor2.run(BACKWARD2);
   leftMotor1.setSpeed(MAX_SPEED_LEFT_A);
   rightMotor1.setSpeed(MAX_SPEED_RIGHT_A);
   leftMotor2.setSpeed(MAX_SPEED_LEFT_A);
@@ -592,6 +597,31 @@ void moveTrack(void)
     } else if ( (num1 == 0) && num3 == 1) { //go to right
       TrackturnLeft();
       while (1) {
+         if ((Serial.available() > 0))
+    {
+      serialIn = Serial.read();
+      if (serialIn != '\r') {
+        if (serialIn != '\n') {
+          char a = char(serialIn);
+          strReceived += a;
+        }
+      }
+    }
+    if (serialIn == '\r') {
+      commandAvailable = true;
+      serialIn = 0;
+      processCommand(strReceived);
+      strReceived = "";
+      commandAvailable = false;
+    }
+
+    if (trackStopFlag) {
+      //trackStopFlag = false;
+      moveStop();
+      strReceived = "";
+      commandAvailable = false;
+      break;
+    }
         num2 = digitalRead(middleSensor);
         if (num2) {
           TrackturnLeft(); continue;
@@ -601,6 +631,32 @@ void moveTrack(void)
     } else if ((num3 == 0) && (num1 == 1)) { // go to left
       TrackturnRight();
       while (1) {
+
+         if ((Serial.available() > 0))
+    {
+      serialIn = Serial.read();
+      if (serialIn != '\r') {
+        if (serialIn != '\n') {
+          char a = char(serialIn);
+          strReceived += a;
+        }
+      }
+    }
+    if (serialIn == '\r') {
+      commandAvailable = true;
+      serialIn = 0;
+      processCommand(strReceived);
+      strReceived = "";
+      commandAvailable = false;
+    }
+
+    if (trackStopFlag) {
+     // trackStopFlag = false;
+      moveStop();
+      strReceived = "";
+      commandAvailable = false;
+      break;
+    }
         num2 = digitalRead(middleSensor);
         if (num2) {
           TrackturnRight(); continue;
