@@ -1,6 +1,9 @@
 # WIFI_Camera_Smart_Robot_Car
 This library is developed by arducam and is applicable to WIFI camera smart robot car
 
+![Alt text](https://github.com/UCTRONICS/WIFI_Camera_Smart_Robot_Car/blob/master/image/IMG_9871.png)
+
+
 # Notice:In order to get a better result of tracking , you'd better set the speed of your Robot lower.
 
 Before enjoying the wifi_Camera_Smart_Robot_Car,You just need to download this RobotCar library form https://github.com/UCTRONICS/WIFI_Camera_Smart_Robot_Car.git
