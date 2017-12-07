@@ -37,6 +37,6 @@ A3:
                             **********************************************************/
  # Q5: In avoidance mode, when the car find the obstacle in the front. it will move back and turn a whole round.
  
- > 
+ > 1. You can try reduce the value of the turnTime by changing #define  turnTime    300
                             
 
