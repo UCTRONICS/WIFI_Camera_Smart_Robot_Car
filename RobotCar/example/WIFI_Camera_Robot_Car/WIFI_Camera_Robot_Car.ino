@@ -8,6 +8,15 @@
   byte servoYCenterPoint = 70;
 **********************************************************/
 //You can change the accuracy of the servo by optimize the servoStep variables
+
+//You can change the TrackFactorUp and TrackFactorDown to adjust the value of tracking
+//If the car deviate too far from the trail line,you can increase the value of TrackFactorUp and reduce the value of TrackFactorDown
+//If the car is shaking very badly, even turn around,you'd better reduce the  value of the TrackFactorUp and increase the value of rackFactorDown
+/*********************************************************
+#define  TrackFactorUp     0.5
+#define  TrackFactorDown   0.7
+**********************************************************/
+
 //When powered on, the wifi module will start and you will see the blue led flash.
 //At the same time the servo will reset to the center Angle you have setted.
 //When the blue led stop flash and keep on light,which means the wifi  start successfully
