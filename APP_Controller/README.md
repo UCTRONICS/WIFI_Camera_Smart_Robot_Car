@@ -29,6 +29,7 @@ A1:
 
 A2:
 > 1. Please try to reconnect your camera, Camera connection exception.Then refresh your APP.
+
 ![Alt text](https://github.com/UCTRONICS/WIFI_Camera_Smart_Robot_Car/blob/master/APP_Controller/image/2.png)
 
 # Q3: I can control my robot car move backword,turn left or right, but can't move forward.What's more,the beep will warning.
@@ -48,11 +49,13 @@ For the bottom servo,You should calibration center position Manually.The servo c
 position in order to you can turn left 90 degrees and turn right 90 degrees.
 
 The below middle picture shows the center position.
+
 ![Alt text](https://github.com/UCTRONICS/WIFI_Camera_Smart_Robot_Car/blob/master/APP_Controller/image/3.png)
 
 For the above servo , you shoud set the center position in order to you can turn up 90 degrees and turn down 90 degrees.
 
 The below middle picture shows the center position.
+
 ![Alt text](https://github.com/UCTRONICS/WIFI_Camera_Smart_Robot_Car/blob/master/APP_Controller/image/4.png)
 
 
