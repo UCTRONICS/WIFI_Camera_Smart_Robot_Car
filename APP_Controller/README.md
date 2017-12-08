@@ -42,13 +42,16 @@ A3:
 
 A4:
 > 1. When assembling the servo, pay attention to the middle position.
-For the bottom servo 
-You should calibration center position Manually.
-The servo can turn 180 degrees, so you shoud set the center position in order to you can turn left 90 degrees and turn right 90 degrees.
+
+For the bottom servo,You should calibration center position Manually.The servo can turn 180 degrees, so you shoud set the center 
+
+position in order to you can turn left 90 degrees and turn right 90 degrees.
+
 The below middle picture shows the center position.
 ![Alt text](https://github.com/UCTRONICS/WIFI_Camera_Smart_Robot_Car/blob/master/APP_Controller/image/3.png)
 
 For the above servo , you shoud set the center position in order to you can turn up 90 degrees and turn down 90 degrees.
+
 The below middle picture shows the center position.
 ![Alt text](https://github.com/UCTRONICS/WIFI_Camera_Smart_Robot_Car/blob/master/APP_Controller/image/4.png)
 
