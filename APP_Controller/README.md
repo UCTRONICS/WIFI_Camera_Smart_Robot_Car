@@ -57,10 +57,11 @@ A4:
  # Q6: In Start Tracking mode, I can't a good result.
  
  A6:
+ > When the sun light is strong, our tracking device wii loses its function.So you'd better test it without the sun light.
  > You can change the TrackFactorUp and TrackFactorDown to adjust the value of tracking
  > If the car deviate too far from the trail line,you can increase the value of TrackFactorUp and reduce the value of  
  > TrackFactorDown.
- > If the car is shaking very badly, even turn around,you'd better reduce the  value of the TrackFactorUp and increase the value       >  of rackFactorDown
+ > If the car is shaking very badly, even turn around,you'd better reduce the  value of the TrackFactorUp and increase the value           >  of rackFactorDown
  
                                       #define  TrackFactorUp     0.5
 
