@@ -7,7 +7,7 @@
       
       avoid obstacle
       
-      first person view
+      WIFI Control supporting first person view
       
       take pictures
       
