@@ -17,6 +17,7 @@
   
        
 # Q1: The screen display "connecting ...",but can't control my Robot car and can't the scene from the car’s camera.
+![Alt text](https://github.com/UCTRONICS/WIFI_Camera_Smart_Robot_Car/blob/master/APP_Controller/image/1.png)
 
 A1: 
 > 1. Make sure your Robot car has start successfully.When the blue led stop flash and keep on light.
@@ -28,6 +29,7 @@ A1:
 
 A2:
 > 1. Please try to reconnect your camera, Camera connection exception.Then refresh your APP.
+![Alt text](https://github.com/UCTRONICS/WIFI_Camera_Smart_Robot_Car/blob/master/APP_Controller/image/2.png)
 
 # Q3: I can control my robot car move backword,turn left or right, but can't move forward.What's more,the beep will warning.
 
@@ -40,6 +42,17 @@ A3:
 
 A4:
 > 1. When assembling the servo, pay attention to the middle position.
+For the bottom servo 
+You should calibration center position Manually.
+The servo can turn 180 degrees, so you shoud set the center position in order to you can turn left 90 degrees and turn right 90 degrees.
+The below middle picture shows the center position.
+![Alt text](https://github.com/UCTRONICS/WIFI_Camera_Smart_Robot_Car/blob/master/APP_Controller/image/3.png)
+
+For the above servo , you shoud set the center position in order to you can turn up 90 degrees and turn down 90 degrees.
+The below middle picture shows the center position.
+![Alt text](https://github.com/UCTRONICS/WIFI_Camera_Smart_Robot_Car/blob/master/APP_Controller/image/4.png)
+
+
 > 2. In WIFI_Camera_Robot_Car.ino, You can change the center Angle of two steering engines by optimize the below variables
 
                            /*******************************************************
