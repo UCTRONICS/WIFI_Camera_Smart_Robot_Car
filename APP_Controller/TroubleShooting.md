@@ -87,5 +87,16 @@ The below middle picture shows the center position.
                                       #define  TrackFactorUp     0.5
 
                                       #define  TrackFactorDown   0.7
+ # Q7:avrdude: stk500_getsync() attempt 7 of 10: not in sync: resp=0x3d
+ # avrdude: stk500_recv(): programmer is not responding.
+ 
+ A7:
+ > 1.Please check if the Arduino board type and serial number are correct in the Arduino IDE.
 
+> 2.Before downloading, reset the development board.
+
+> 3. The serial port RX/TX on the development board has other connections or reuse.
+
+> Before uploading our code , you should disconnect the wifi module because of the  RX/TX reuse.
+ 
 
