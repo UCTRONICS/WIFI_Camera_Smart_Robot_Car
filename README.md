@@ -20,7 +20,7 @@ Then,unzip the WIFI_Camera_Smart_Robot_Car file and copy the RobotCar library to
 #How to use RobotCar app?
 
 > 1. Download and Install App
-https://github.com/UCTRONICS/WIFI_Camera_Smart_Robot_Car/raw/master/WIFI_APP/RobotCar.apk
+https://github.com/UCTRONICS/WIFI_Camera_Smart_Robot_Car/raw/master/APP_Controller/RobotCar.apk
 
 > 2. Connect to the Robot Car
 
