@@ -99,4 +99,8 @@ The below middle picture shows the center position.
 
 > Before uploading our code , you should disconnect the wifi module because of the  RX/TX reuse.
  
-
+  # Q8: Connect Successfully!  I connected to the cars WiFi and can see the camera image but the car is not responding to the wheel/movement controls.
+  A8: 
+The wifi Robot Car support multiple mobile phones to see the image at the same time, but only one control port to control your car.
+So,only one mobile phone can control the car to run .
+If you want to control your car Please ensure only one phone connect the car .
