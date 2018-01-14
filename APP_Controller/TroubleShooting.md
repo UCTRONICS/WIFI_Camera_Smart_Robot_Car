@@ -100,11 +100,13 @@ The below middle picture shows the center position.
 > Before uploading our code , you should disconnect the wifi module because of the  RX/TX reuse.
  
   # Q8: Connect Successfully!  I connected to the cars WiFi and can see the camera image but the car is not responding to the wheel/movement controls.
-  A8: 
+  A8:
+  Please ensure you have download our code library from https://github.com/UCTRONICS/WIFI_Camera_Smart_Robot_Car.git 
+  
+  and uploading the  WIFI_Camera_Smart_Robot_Car.ino file to your Robot car.
+  
 The wifi Robot Car support multiple mobile phones to see the image at the same time, but only one control port to control your car.
 
 So,only one mobile phone can control the car to run .
-
-If you want to control your car Please ensure only one phone connect the car .
 
 What's more, reboot your Robot car and your app.
