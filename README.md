@@ -1,13 +1,17 @@
 # WIFI_Camera_Smart_Robot_Car
+
+# This library is developed by arducam and is applicable to WIFI camera smart robot car
+
+# Any problems, please refer to our trouble shooting
+
+# https://github.com/UCTRONICS/WIFI_Camera_Smart_Robot_Car/blob/master/APP_Controller/TroubleShooting.md
+
 # SKU : K0071  
 # www.amazon.com/dp/B077VCTVFB
 # UCTRONICS WIFI Camera Robot Car PartI
 [![IMAGE ALT TEXT](https://github.com/UCTRONICS/WIFI_Camera_Smart_Robot_Car/blob/master/image/video.jpeg)](https://youtu.be/WcST6YBXwuk "WIFI Camera Smart Robot Car Installation")
 # UCTRONICS WIFI Camera Robot Car PartII
 [![IMAGE ALT TEXT](https://github.com/UCTRONICS/WIFI_Camera_Smart_Robot_Car/blob/master/image/video1.jpeg)](https://youtu.be/p29AVxl-zDo "UCTRONICS WIFI Camera Robot Car PartII")
-
-Any problems, please refer to our trouble shooting https://github.com/UCTRONICS/WIFI_Camera_Smart_Robot_Car/blob/master/APP_Controller/TroubleShooting.md
-This library is developed by arducam and is applicable to WIFI camera smart robot car
 
 ![Alt text](https://github.com/UCTRONICS/WIFI_Camera_Smart_Robot_Car/blob/master/image/IMG_9871.png)
 
