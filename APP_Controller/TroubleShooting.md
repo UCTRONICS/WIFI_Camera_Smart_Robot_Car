@@ -110,3 +110,17 @@ The wifi Robot Car support multiple mobile phones to see the image at the same t
 So,only one mobile phone can control the car to run .
 
 What's more, reboot your Robot car and your app.
+
+  # Q9: Video delayed too much time and can't get the Very smooth video.:
+  A9:
+  1. This has a lot to do with the strength of the WIFI signal. If too far away or too many obstacles can directly affect the intensity      
+  of wifi.You can check your wifi intensity on your mobile phone.
+  
+  2.If possible, you can try to change another mobile phone to test.
+  
+  3.When you control your Robot Car you'd better ensure only one mobile phone connect to the UCTRONICS.
+  
+  
+  
+  
+  
