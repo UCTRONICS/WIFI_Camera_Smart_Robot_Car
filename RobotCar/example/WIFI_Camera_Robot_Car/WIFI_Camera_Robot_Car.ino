@@ -533,8 +533,8 @@ void turnLeft(void)
 void TrackturnLeft(void)
 {
   static int MAX_SPEED_LEFT_A, MAX_SPEED_RIGHT_A;
-  MAX_SPEED_RIGHT_A = MAX_SPEED_RIGHT > (255 - (int)(MAX_SPEED_RIGHT * 0.5)) ? 255 : MAX_SPEED_RIGHT + (int)(MAX_SPEED_RIGHT * 0.5);
-  MAX_SPEED_LEFT_A  = (MAX_SPEED_LEFT - (int)(MAX_SPEED_LEFT * 0.7)) < 0 ? 0 : MAX_SPEED_LEFT - (int)(MAX_SPEED_LEFT * 0.7);
+  MAX_SPEED_RIGHT_A = MAX_SPEED_RIGHT > (255 - (int)(MAX_SPEED_RIGHT * TrackFactorUp)) ? 255 : MAX_SPEED_RIGHT + (int)(MAX_SPEED_RIGHT * TrackFactorUp);
+  MAX_SPEED_LEFT_A  = (MAX_SPEED_LEFT - (int)(MAX_SPEED_LEFT * TrackFactorDown)) < 0 ? 0 : MAX_SPEED_LEFT - (int)(MAX_SPEED_LEFT *TrackFactorDown);
 
   motorSet = "LEFT";
   leftMotor1.run(BACKWARD);
