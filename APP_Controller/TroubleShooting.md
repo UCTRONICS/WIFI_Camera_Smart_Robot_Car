@@ -112,6 +112,7 @@ So,only one mobile phone can control the car to run .
 What's more, reboot your Robot car and your app.
 
   # Q9: Video delayed too much time and can't get the Very smooth video.:
+  
   A9:
   1. This has a lot to do with the strength of the WIFI signal. If too far away or too many obstacles can directly affect the intensity      
   of wifi.You can check your wifi intensity on your mobile phone.
