@@ -123,11 +123,15 @@ What's more, reboot your Robot car and your app.
   1. This has a lot to do with the strength of the WIFI signal. If too far away or too many obstacles can directly affect the intensity      
   of wifi.You can check your wifi intensity on your mobile phone.
   
+  You should ensure the wifi antenna is connected normally.
+  ![Alt text](https://github.com/UCTRONICS/pic/blob/master/WIifi_line.jpeg)
+  
   2.If possible, you can try to change another mobile phone to test.
   
   3.When you control your Robot Car you'd better ensure only one mobile phone connect to the UCTRONICS.
   
+  4. If the camera's data line is not connected to normal,the result is very bad.The line is twisted line as the follows, so 
   
-  
-  
+  you must ensure the line is twist.
+   ![Alt text](https://github.com/UCTRONICS/pic/blob/master/twisted_line.jpeg)
   
