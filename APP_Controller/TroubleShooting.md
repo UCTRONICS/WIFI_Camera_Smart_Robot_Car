@@ -134,4 +134,8 @@ What's more, reboot your Robot car and your app.
   
   you must ensure the line is twist.
    ![Alt text](https://github.com/UCTRONICS/pic/blob/master/twisted_line.jpeg)
-  
+  # Q10: I completely assembled it. I got the app, but the Wifi signal is not appearing
+  A10:
+  After power on, the wifi system will start, In the startup process., the blue led will 
+  flash, it maybe continuous for about 30 seconds. After it start finish, the bule led will constantly light up.
+  Then open your app and search the 'UCTRONICS'.
