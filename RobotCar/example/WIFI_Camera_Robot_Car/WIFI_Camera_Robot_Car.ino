@@ -436,9 +436,8 @@ void moveForward(void)
   motorSet = "FORWARD";
   leftMotor1.run(FORWARD);
   rightMotor1.run(FORWARD);
-  motorSet = "FORWARD2";
-  leftMotor2.run(FORWARD2);
-  rightMotor2.run(FORWARD2);
+  leftMotor2.run(FORWARD);
+  rightMotor2.run(FORWARD);
   leftMotor1.setSpeed(MAX_SPEED_LEFT);
   rightMotor1.setSpeed(MAX_SPEED_RIGHT);
   leftMotor2.setSpeed(MAX_SPEED_LEFT);
@@ -461,8 +460,8 @@ void movePianZhuan (String mode)
     }
     leftMotor1.run(FORWARD);
     rightMotor1.run(FORWARD);
-    leftMotor2.run(FORWARD2);
-    rightMotor2.run(FORWARD2);
+    leftMotor2.run(FORWARD);
+    rightMotor2.run(FORWARD);
   }
   if (!(mode.indexOf("down") < 0))
   {
@@ -478,8 +477,8 @@ void movePianZhuan (String mode)
     }
     leftMotor1.run(BACKWARD);
     rightMotor1.run(BACKWARD);
-    leftMotor2.run(BACKWARD2);
-    rightMotor2.run(BACKWARD2);
+    leftMotor2.run(BACKWARD);
+    rightMotor2.run(BACKWARD);
   }
   leftMotor1.setSpeed(MAX_SPEED_LEFT_A);
   rightMotor1.setSpeed(MAX_SPEED_RIGHT_A);
@@ -491,8 +490,8 @@ void moveBackward(void)
   motorSet = "BACKWARD";
   leftMotor1.run(BACKWARD);
   rightMotor1.run(BACKWARD);
-  leftMotor2.run(BACKWARD2);
-  rightMotor2.run(BACKWARD2);
+  leftMotor2.run(BACKWARD);
+  rightMotor2.run(BACKWARD);
   leftMotor1.setSpeed(MAX_SPEED_LEFT);
   rightMotor1.setSpeed(MAX_SPEED_RIGHT);
   leftMotor2.setSpeed(MAX_SPEED_LEFT);
@@ -504,8 +503,8 @@ void turnRight(void)
   motorSet = "RIGHT";
   leftMotor1.run(FORWARD);
   rightMotor1.run(BACKWARD);
-  leftMotor2.run(FORWARD2);
-  rightMotor2.run(BACKWARD2);
+  leftMotor2.run(FORWARD);
+  rightMotor2.run(BACKWARD);
   MAX_SPEED_LEFT_AR = MAX_SPEED_LEFT > 200 ? 200 : MAX_SPEED_LEFT;
   MAX_SPEED_RIGHT_AR = MAX_SPEED_RIGHT > 200 ? 200 : MAX_SPEED_RIGHT;
   leftMotor1.setSpeed(MAX_SPEED_LEFT_AR);
@@ -519,8 +518,8 @@ void turnLeft(void)
   motorSet = "LEFT";
   leftMotor1.run(BACKWARD);
   rightMotor1.run(FORWARD);
-  leftMotor2.run(BACKWARD2);
-  rightMotor2.run(FORWARD2);
+  leftMotor2.run(BACKWARD);
+  rightMotor2.run(FORWARD);
   MAX_SPEED_LEFT_AL = MAX_SPEED_LEFT > 200 ? 200 : MAX_SPEED_LEFT;
   MAX_SPEED_RIGHT_AL = MAX_SPEED_RIGHT > 200 ? 200 : MAX_SPEED_RIGHT;
   leftMotor1.setSpeed(MAX_SPEED_LEFT_AL);
@@ -539,8 +538,8 @@ void TrackturnLeft(void)
   motorSet = "LEFT";
   leftMotor1.run(BACKWARD);
   rightMotor1.run(FORWARD);
-  leftMotor2.run(BACKWARD2);
-  rightMotor2.run(FORWARD2);
+  leftMotor2.run(BACKWARD);
+  rightMotor2.run(FORWARD);
   leftMotor1.setSpeed(MAX_SPEED_LEFT_A);
   rightMotor1.setSpeed(MAX_SPEED_RIGHT_A);
   leftMotor2.setSpeed(MAX_SPEED_LEFT_A);
@@ -556,8 +555,8 @@ void TrackturnRight(void)
   motorSet = "RIGHT";
   leftMotor1.run(FORWARD);
   rightMotor1.run(BACKWARD);
-  leftMotor2.run(FORWARD2);
-  rightMotor2.run(BACKWARD2);
+  leftMotor2.run(FORWARD);
+  rightMotor2.run(BACKWARD);
   leftMotor1.setSpeed(MAX_SPEED_LEFT_A);
   rightMotor1.setSpeed(MAX_SPEED_RIGHT_A);
   leftMotor2.setSpeed(MAX_SPEED_LEFT_A);
@@ -565,8 +564,8 @@ void TrackturnRight(void)
 }
 void moveStop(void)
 {
-  leftMotor1.run(RELEASE); rightMotor1.run(RELEASE);
-  leftMotor2.run(RELEASE); rightMotor2.run(RELEASE);
+  leftMotor1.run(5); rightMotor1.run(RELEASE);
+  leftMotor2.run(5); rightMotor2.run(RELEASE);
 }
 void moveTrack(void)
 {
