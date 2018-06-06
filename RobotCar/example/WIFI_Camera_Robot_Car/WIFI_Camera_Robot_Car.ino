@@ -564,8 +564,8 @@ void TrackturnRight(void)
 }
 void moveStop(void)
 {
-  leftMotor1.run(5); rightMotor1.run(RELEASE);
-  leftMotor2.run(5); rightMotor2.run(RELEASE);
+  leftMotor1.run(5); rightMotor1.run(5);
+  leftMotor2.run(5); rightMotor2.run(5);
 }
 void moveTrack(void)
 {
