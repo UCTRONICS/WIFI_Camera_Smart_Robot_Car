@@ -13,9 +13,6 @@
 # UCTRONICS WIFI Camera Robot Car PartII
 [![IMAGE ALT TEXT](https://github.com/UCTRONICS/WIFI_Camera_Smart_Robot_Car/blob/master/image/video1.jpeg)](https://youtu.be/p29AVxl-zDo "UCTRONICS WIFI Camera Robot Car PartII")
 
-![Alt text](https://github.com/UCTRONICS/WIFI_Camera_Smart_Robot_Car/blob/master/image/IMG_9871.png)
-
-
 ### Before enjoying the wifi_Camera_Smart_Robot_Car,You just need to download this RobotCar library form https://github.com/UCTRONICS/WIFI_Camera_Smart_Robot_Car.git
 
 ### Then,unzip the WIFI_Camera_Smart_Robot_Car file and copy the RobotCar library to ..\Arduino\libraries path.
